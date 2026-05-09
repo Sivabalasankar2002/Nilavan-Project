@@ -1,6 +1,6 @@
 # DEPLOYMENT.md
 
-# Secure Deployment Documentation – Next.js Application
+# Secure Deployment Documentation – Nilavan Application
 
 ## Project Overview
 
