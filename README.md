@@ -92,7 +92,6 @@ Contains:
 
 Covered vulnerabilities include:
 
-- 
 - Missing Rate Limiting
 - HTML Injection
 - Missing Server-Side Input Validation
