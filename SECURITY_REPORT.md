@@ -118,6 +118,8 @@ curl -X POST https://nilvan.duckdns.org/api/sendgrid \
 done
 ```
 
+
+
 ---
 
 ## Result
@@ -125,6 +127,14 @@ done
 All requests were accepted successfully without any restriction.
 
 ---
+
+<img width="1306" height="647" alt="Screenshot 2026-05-09 122850" src="https://github.com/user-attachments/assets/e01514e5-b272-40a8-988f-4746acea479b" />
+
+<img width="1586" height="687" alt="Screenshot 2026-05-09 130749" src="https://github.com/user-attachments/assets/2110a3e2-acb7-4e68-a688-56f19f72fac4" />
+
+<img width="1905" height="902" alt="Screenshot 2026-05-09 123849" src="https://github.com/user-attachments/assets/3a64ddeb-acab-4d40-b4f3-b9d21ebe0a08" />
+
+
 
 ## Recommended Fix
 
@@ -138,6 +148,10 @@ location /api/sendgrid {
     proxy_pass http://localhost:3000;
 }
 ```
+<img width="1916" height="1020" alt="Screenshot 2026-05-09 130133" src="https://github.com/user-attachments/assets/e4e2364e-3c47-478a-9a91-0b9e2d44658d" />
+
+<img width="1919" height="869" alt="Screenshot 2026-05-09 130215" src="https://github.com/user-attachments/assets/92f4ca75-dcc1-4bc6-a56a-dcde13680bee" />
+
 
 ---
 
@@ -215,6 +229,7 @@ curl -X POST https://nilvan.duckdns.org/api/sendgrid \
 "message":"<h2>Important Documents</h2><a href=\"https://example.com\">Click Here To View</a>"
 }'
 ```
+<img width="1758" height="249" alt="Screenshot 2026-05-09 131353" src="https://github.com/user-attachments/assets/13e269bc-dc58-482e-a443-b94e9ebea3ac" />
 
 ---
 
@@ -227,6 +242,11 @@ The received email rendered:
 * Manipulated formatting inside the email body
 
 This confirmed that HTML content was executed instead of displayed as plain text.
+
+<img width="1919" height="907" alt="Screenshot 2026-05-09 131639" src="https://github.com/user-attachments/assets/d183dada-3041-4f9d-88fa-6f112d7a5244" />
+
+<img width="1919" height="845" alt="Screenshot 2026-05-09 132524" src="https://github.com/user-attachments/assets/8df154bd-ff02-47be-9367-0ccb4dcc1f89" />
+
 
 ---
 
@@ -246,12 +266,16 @@ const escapeHtml = (value: string) =>
     .replace(/'/g, "&#039;");
 ```
 
+<img width="1167" height="504" alt="image" src="https://github.com/user-attachments/assets/dde48aeb-b55d-49f1-904d-2e3c88615b16" />
+
+
 ### Secure Usage
 
 ```ts
 <p><strong>Name:</strong> ${escapeHtml(name)}</p>
 <p><strong>Message:</strong> ${escapeHtml(message)}</p>
 ```
+<img width="1450" height="525" alt="image" src="https://github.com/user-attachments/assets/189d7745-c4ad-4d3f-aa79-c872c38694dc" />
 
 ---
 
@@ -295,6 +319,7 @@ Lines 6-7
 const body = await req.json();
 const { name, email, phone, message } = body;
 ```
+<img width="1572" height="666" alt="Screenshot 2026-05-09 133200" src="https://github.com/user-attachments/assets/fd61a26f-c971-48ec-b5fc-a1fc368aeaeb" />
 
 ---
 
@@ -338,12 +363,15 @@ curl -X POST https://nilvan.duckdns.org/api/sendgrid \
 "message":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 }'
 ```
+<img width="1919" height="266" alt="Screenshot 2026-05-09 132831" src="https://github.com/user-attachments/assets/d60c3111-683f-4b09-a154-40bc87329fb6" />
 
 ---
 
 ## Result
 
 The API accepted invalid data and attempted to process the request instead of rejecting it with validation errors.
+
+<img width="1505" height="767" alt="Screenshot 2026-05-09 133040" src="https://github.com/user-attachments/assets/8bdec633-dfeb-4f4d-bfde-f210162ee4f5" />
 
 ---
 
@@ -372,6 +400,8 @@ if (!parsed.success) {
   );
 }
 ```
+<img width="1077" height="196" alt="image" src="https://github.com/user-attachments/assets/7092fe4f-a817-4577-ba69-2dc040841c47" />
+
 
 ---
 
@@ -380,7 +410,6 @@ if (!parsed.success) {
 After remediation:
 
 * Invalid payloads returned HTTP `400 Bad Request`
-* Oversized requests were rejected
 * Only properly formatted input was accepted
 
 ---
@@ -453,12 +482,15 @@ curl -X POST https://nilvan.duckdns.org/api/sendgrid \
 "message":"unauthorized request"
 }'
 ```
+<img width="1409" height="292" alt="Screenshot 2026-05-09 134142" src="https://github.com/user-attachments/assets/7d35ba57-82af-45b0-a19a-de361f2dbb3b" />
 
 ---
 
 ## Result
 
 The request was accepted successfully even though it originated from an untrusted domain.
+
+<img width="973" height="503" alt="Screenshot 2026-05-09 134222" src="https://github.com/user-attachments/assets/d8e85a21-702b-4b12-85f7-8f8ff63e61c8" />
 
 ---
 
@@ -488,6 +520,7 @@ if (
   );
 }
 ```
+<img width="1481" height="444" alt="image" src="https://github.com/user-attachments/assets/419aa451-0734-42cf-9a10-33bab8081063" />
 
 ---
 
@@ -497,6 +530,9 @@ After remediation:
 
 * Requests from untrusted domains returned HTTP `403 Forbidden`
 * Only requests originating from the official frontend domain were accepted
+
+<img width="1483" height="219" alt="image" src="https://github.com/user-attachments/assets/c2257788-b28b-41ac-9eae-656926175cdc" />
+
 
 ---
 
@@ -549,6 +585,9 @@ Exploitation of vulnerable dependencies may lead to:
 ```bash
 npm audit
 ```
+<img width="1919" height="1031" alt="Screenshot 2026-05-09 134927" src="https://github.com/user-attachments/assets/20e1b66e-79fc-44a6-a070-bb2bd894d97c" />
+
+
 
 ---
 
@@ -561,6 +600,7 @@ npm audit
 5 High
 4 Moderate
 ```
+<img width="1916" height="1015" alt="Screenshot 2026-05-09 134905" src="https://github.com/user-attachments/assets/12da8af2-5f15-4228-9ab1-de4d229b5661" />
 
 ---
 
@@ -573,6 +613,7 @@ npm audit fix
 npm install next@latest
 npm update
 ```
+<img width="1919" height="699" alt="Screenshot 2026-05-09 170839" src="https://github.com/user-attachments/assets/25d77488-c68b-4c0c-adb4-e9ae4040150c" />
 
 ---
 
