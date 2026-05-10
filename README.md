@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the complete secured Next.js application source code, deployment documentation, security assessment findings, proof-of-concept (PoC) examples, screenshots, and PDF reports.
+This repository contains the complete securely Fixed application source code, deployment documentation, security assessment findings, screenshots, and PDF reports.
 
 All security fixes are available in the following branch:
 
@@ -17,22 +17,36 @@ main
 ```txt
 .
 ├── app/
+│   ├── api/
+│
 ├── components/
+│
+├── hooks/
+│
+├── lib/
+│
 ├── public/
+│
 ├── styles/
-├── package.json
-├── next.config.js
-├── README.md
-├── DEPLOYMENT.md
-├── SECURITY_REPORT.md
-├── METHODOLOGY.md
-├── deployment-guide.pdf
-├── vulnerability-report.pdf
+│
 ├── screenshots/
 │   ├── Deployment Evidence/
-│   ├── Vulnerablity Evidence
+│   ├── Vulnerablity Evidence/
+│
+├── DEPLOYMENT.md
+├── SECURITY_REPORT.md
+├── README.md
+├── Secure Deployment Documentation – Nilavan Application.pdf
+├── Vulnerablity Report - Nilvan Application.pdf
+│
+├── components.json
+├── next-env.d.ts
+├── package.json
+├── package-lock.json
+├── postcss.config.mjs
+├── tailwind.config.ts
+└── tsconfig.json
 ```
-
 ---
 
 # Included Deliverables
@@ -94,7 +108,7 @@ Covered vulnerabilities include:
 
 # PDF Reports
 
-## deployment-guide.pdf
+## Secure Deployment Documentation – Nilavan Application.pdf
 Contains:
 - Step-by-step deployment process
 - VPS setup
@@ -104,7 +118,7 @@ Contains:
 - DNS mapping
 
 
-## vulnerability-report.pdf
+## Vulnerablity Report - Nilvan Application.pdf
 Contains:
 - Vulnerability findings
 - Commands used for identification
@@ -115,6 +129,10 @@ Contains:
 
 ---
 
+
+
+# Author
+Sivabalasankar A
 
 
 ---
